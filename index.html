@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Present Simple Quest 🎮 — A1–A2 Working List</title>
+<style>
+  :root{
+    --ink:#1f2340;
+    --pink:#ff5d8f;
+    --purple:#7b61ff;
+    --blue:#2bb3ff;
+    --green:#22c55e;
+    --yellow:#ffc93c;
+    --orange:#ff8a3d;
+    --card:#ffffff;
+    --line:#e6e8f5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 10% 0%, #ffe3ef 0%, transparent 40%),
+      radial-gradient(circle at 90% 10%, #e2e8ff 0%, transparent 45%),
+      radial-gradient(circle at 50% 100%, #dff9ee 0%, transparent 45%),
+      #f7f8ff;
+    line-height:1.55;
+    padding:18px 14px 60px;
+  }
+  .wrap{max-width:900px;margin:0 auto;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    text-align:center;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:#fff;
+    border-radius:26px;
+    padding:26px 18px 22px;
+    box-shadow:0 12px 0 #d9d1ff, 0 20px 34px rgba(90,70,200,.28);
+    margin-bottom:16px;
+  }
+  .hero h1{
+    margin:0;
+    font-size:clamp(1.5rem,5vw,2.3rem);
+    letter-spacing:1px;
+    text-shadow:0 3px 0 rgba(0,0,0,.18);
+  }
+  .hero .sub{
+    margin:6px 0 14px;
+    font-size:1rem;
+    opacity:.95;
+  }
+  .hero .player{
+    display:inline-block;
+    background:rgba(255,255,255,.22);
+    border:2px dashed rgba(255,255,255,.7);
+    border-radius:14px;
+    padding:8px 16px;
+    font-size:.95rem;
+    letter-spacing:.5px;
+  }
+
+  /* ---------- MAP ---------- */
+  .map{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+    margin:0 0 22px;
+  }
+  .map a{
+    text-decoration:none;
+    background:#fff;
+    color:var(--ink);
+    border:2px solid var(--line);
+    border-radius:999px;
+    padding:7px 14px;
+    font-size:.85rem;
+    font-weight:bold;
+    box-shadow:0 3px 0 var(--line);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .map a:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--line);}
+
+  /* ---------- CARDS / LEVELS ---------- */
+  .card{
+    background:var(--card);
+    border-radius:22px;
+    padding:20px 20px 18px;
+    margin-bottom:22px;
+    box-shadow:0 8px 0 rgba(150,150,200,.16), 0 14px 26px rgba(70,70,140,.09);
+    border-top:8px solid var(--purple);
+    position:relative;
+  }
+  .card.l2{border-top-color:var(--green);}
+  .card.l3{border-top-color:var(--pink);}
+  .card.l4{border-top-color:var(--blue);}
+  .card.l5{border-top-color:var(--orange);}
+  .card.l6{border-top-color:var(--yellow);}
+  .card.checkpoint{border-top-color:#ffc93c;}
+  .card.exercise{border-top-color:#22c55e;}
+
+  .level-tag{
+    display:inline-block;
+    background:var(--purple);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:bold;
+    letter-spacing:1.5px;
+    padding:4px 12px;
+    border-radius:999px;
+    text-transform:uppercase;
+  }
+  .l2 .level-tag{background:var(--green);}
+  .l3 .level-tag{background:var(--pink);}
+  .l4 .level-tag{background:var(--blue);}
+  .l5 .level-tag{background:var(--orange);}
+  .l6 .level-tag{background:#e0a800;}
+  .checkpoint .level-tag{background:#e0a800;}
+  .exercise .level-tag{background:var(--green);}
+
+  h2{
+    margin:10px 0 12px;
+    font-size:clamp(1.15rem,3.6vw,1.45rem);
+  }
+  h3{
+    margin:20px 0 8px;
+    font-size:1rem;
+    color:var(--purple);
+    letter-spacing:.4px;
+  }
+  .l2 h3{color:#178a45;}
+  .l3 h3{color:#d43b6d;}
+  .l4 h3{color:#1277b8;}
+  .l5 h3{color:#d4661b;}
+  .l6 h3{color:#b98a00;}
+
+  /* ---------- USE GRID ---------- */
+  .uses{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+    margin-top:6px;
+  }
+  .use{
+    background:#f6f4ff;
+    border:2px solid #e8e3ff;
+    border-radius:16px;
+    padding:12px 14px;
+  }
+  .use b{display:block;margin-bottom:4px;}
+  .use span{font-size:.92rem;color:#4a4f78;}
+
+  /* ---------- FORMULA BOXES ---------- */
+  .formula{
+    background:#f3f7ff;
+    border:2px dashed #b9d3f5;
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:1rem;
+    margin:10px 0;
+    overflow-x:auto;
+  }
+  .formula b{color:var(--purple);}
+  .plus{color:#8b93b8;font-weight:bold;padding:0 4px;}
+
+  .warn{
+    background:#fff6e5;
+    border-left:6px solid var(--orange);
+    border-radius:12px;
+    padding:10px 14px;
+    margin:14px 0 4px;
+    font-size:.94rem;
+  }
+  .warn b{color:#c25a00;}
+
+  .tip{
+    background:#e9fbf1;
+    border-left:6px solid var(--green);
+    border-radius:12px;
+    padding:10px 14px;
+    margin:14px 0 4px;
+    font-size:.94rem;
+  }
+  .tip b{color:#15803d;}
+
+  /* ---------- TABLES ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 6px;
+    font-size:.93rem;
+  }
+  th,td{
+    padding:9px 11px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th{
+    background:#eef0ff;
+    color:#3b3f70;
+    font-size:.82rem;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+  }
+  tr:nth-child(even) td{background:#fafaff;}
+
+  code{
+    background:#f1f2fb;
+    border-radius:6px;
+    padding:1px 6px;
+    font-size:.92em;
+    color:#b1276b;
+  }
+
+  /* ---------- EXAMPLE BUBBLES ---------- */
+  .bubbles{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+  .bubble{
+    background:#fff0f6;
+    border:2px solid #ffd6e6;
+    border-radius:16px 16px 16px 4px;
+    padding:8px 14px;
+    font-size:.95rem;
+  }
+  .bubble.ok{background:#eafaf0;border-color:#c9efd8;}
+  .bubble.no{background:#fff0f0;border-color:#ffd2d2;}
+
+  /* ---------- ONLINE EXERCISES ---------- */
+  .online-q{
+    margin:14px 0;
+    padding:12px 14px;
+    background:#f9f9ff;
+    border-radius:14px;
+    border:2px solid #eceafb;
+  }
+  .online-q .sentence{
+    font-size:.98rem;
+    margin-bottom:8px;
+  }
+  .radio-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .radio-row label{
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:999px;
+    padding:6px 14px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:.9rem;
+  }
+  .radio-row input{
+    accent-color:var(--purple);
+    margin-right:6px;
+  }
+  .answer-input{
+    border:2px solid #cfd4f0;
+    border-radius:10px;
+    padding:8px 10px;
+    font-size:.95rem;
+    font-family:inherit;
+    min-width:120px;
+    width:100%;
+    max-width:380px;
+    margin:4px 0;
+  }
+  .answer-input:focus{
+    outline:3px solid #ffe08a;
+    border-color:var(--purple);
+  }
+  .blank-input{
+    display:inline-block;
+    width:135px;
+    max-width:42vw;
+    margin:0 4px;
+    padding:5px 8px;
+    border-radius:8px;
+    border:2px solid #cfd4f0;
+    font-size:.95rem;
+    font-family:inherit;
+  }
+  .blank-input:focus{
+    outline:3px solid #ffe08a;
+    border-color:var(--purple);
+  }
+  .blank-input.correct{
+    border-color:var(--green);
+    background:#eafaf0;
+  }
+  .blank-input.incorrect{
+    border-color:#e5484d;
+    background:#fff0f0;
+  }
+  .check-btn{
+    display:inline-block;
+    cursor:pointer;
+    border:none;
+    border-radius:999px;
+    padding:10px 20px;
+    font-weight:bold;
+    font-size:.95rem;
+    color:#fff;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    box-shadow:0 5px 0 #c9bfff;
+    transition:.12s;
+    font-family:inherit;
+    margin-top:8px;
+  }
+  .check-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 7px 0 #c9bfff;
+  }
+  .check-btn:active{
+    transform:translateY(2px);
+    box-shadow:0 3px 0 #c9bfff;
+  }
+  .feedback{
+    font-size:.9rem;
+    font-weight:bold;
+    margin-top:8px;
+    min-height:1.2em;
+  }
+  .feedback.good{color:#15803d;}
+  .feedback.bad{color:#c2410c;}
+  .item-feedback{
+    font-size:.85rem;
+    font-weight:bold;
+    margin-left:8px;
+  }
+  .item-feedback.good{color:#15803d;}
+  .item-feedback.bad{color:#c2410c;}
+
+  /* ---------- MASTER CHECKBOX ---------- */
+  .master{display:block;position:relative;margin-top:18px;}
+  .master input{position:absolute;opacity:0;width:0;height:0;}
+  .master .box{
+    display:inline-block;
+    cursor:pointer;
+    background:#fff;
+    border:2px solid var(--purple);
+    color:var(--purple);
+    border-radius:999px;
+    padding:7px 16px;
+    font-weight:bold;
+    font-size:.85rem;
+    user-select:none;
+    transition:.15s;
+  }
+  .master .box::before{content:"🎯 Mark this level as mastered";}
+  .master input:checked + .box{
+    background:var(--green);
+    border-color:var(--green);
+    color:#fff;
+  }
+  .master input:checked + .box::before{content:"✅ Level cleared! +100 XP";}
+  .master input:focus-visible + .box{outline:3px solid var(--yellow);outline-offset:3px;}
+
+  /* ---------- BOSS BATTLE ---------- */
+  .boss{
+    background:linear-gradient(135deg,#2b2d5c,#5b3fa8);
+    color:#fff;
+    border-top-color:var(--yellow);
+    box-shadow:0 8px 0 rgba(30,30,80,.35), 0 16px 30px rgba(40,30,90,.3);
+  }
+  .boss h2{color:#fff;}
+  .boss h3{color:var(--yellow);}
+  .boss .level-tag{background:var(--yellow);color:#3a2a00;}
+  .boss ol{line-height:1.9;}
+  .boss .online-q{
+    background:rgba(255,255,255,.93);
+    color:var(--ink);
+  }
+  .boss .online-q .sentence{color:var(--ink);}
+  .boss .feedback.good{color:#86efac;}
+  .boss .feedback.bad{color:#fca5a5;}
+
+  /* ---------- VICTORY ---------- */
+  .victory{
+    text-align:center;
+    background:linear-gradient(135deg,#fff7d6,#ffe9a8);
+    border-top-color:var(--yellow);
+    padding:34px 20px 30px;
+  }
+  .victory .crown{
+    font-size:5.5rem;
+    line-height:1;
+    filter:drop-shadow(0 6px 0 rgba(0,0,0,.12));
+    animation:pop 1.4s ease-in-out infinite alternate;
+  }
+  @keyframes pop{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+  }
+  .victory h2{
+    font-size:clamp(1.6rem,5vw,2.2rem);
+    color:#7a4b00;
+    margin:8px 0 6px;
+  }
+  .victory p{
+    font-size:1rem;
+    color:#6b4f1a;
+    margin:6px auto;
+    max-width:560px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:.85rem;
+    color:#7a7fa8;
+    margin-top:26px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🎮 PRESENT SIMPLE QUEST</h1>
+    <p class="sub">Your working list • Level A1–A2 • 6 levels to clear</p>
+    <p class="player">Player: ______________ &nbsp;⭐ XP: ______</p>
+  </header>
+
+  <nav class="map">
+    <a href="#use">1️⃣ When?</a>
+    <a href="#positive">2️⃣ ➕ Positive</a>
+    <a href="#negative">3️⃣ ➖ Negative</a>
+    <a href="#yesno">4️⃣ ❓ Yes/No</a>
+    <a href="#wh">5️⃣ 🕵️ Wh-</a>
+    <a href="#who">6️⃣ 🦸 Who</a>
+    <a href="#boss">👑 Boss</a>
+    <a href="#victory">🏆 Victory</a>
+  </nav>
+
+  <!-- ================= LEVEL 1 ================= -->
+  <section class="card" id="use">
+    <span class="level-tag">Level 1</span>
+    <h2>🧭 When do we use the Present Simple?</h2>
+    <p>Use it for things that are <b>true in general</b> — not just "now".</p>
+
+    <div class="uses">
+      <div class="use">
+        <b>🔁 Habits &amp; routines</b>
+        <span>I <b>brush</b> my teeth every morning.<br>She <b>goes</b> to school by bus.</span>
+      </div>
+      <div class="use">
+        <b>🌍 Facts &amp; truths</b>
+        <span>Water <b>boils</b> at 100°C.<br>Cats <b>like</b> fish.</span>
+      </div>
+      <div class="use">
+        <b>🕐 Timetables &amp; schedules</b>
+        <span>The train <b>leaves</b> at 8:00.<br>The shop <b>opens</b> at 9.</span>
+      </div>
+    </div>
+
+    <h3>⏰ Signal words (they love the Present Simple!)</h3>
+    <p>
+      <code>always</code> <code>usually</code> <code>often</code> <code>sometimes</code>
+      <code>never</code> <code>every day / week / year</code> <code>on Mondays</code>
+      <code>once a week</code> <code>in the morning</code>
+    </p>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= CHECKPOINT AFTER LEVEL 1 ================= -->
+  <section class="card checkpoint" id="check1">
+    <span class="level-tag">Checkpoint</span>
+    <h2>🧪 Comprehension check — Present Simple or not?</h2>
+    <p>Read each sentence. Choose ✅ Yes or ❌ No, then press Check.</p>
+
+    <div class="online-q" data-q="1" data-answer="yes">
+      <div class="sentence">1. My brother <b>walks</b> to work every day.</div>
+      <div class="radio-row">
+        <label><input type="radio" name="check1-1" value="yes"> ✅ Yes</label>
+        <label><input type="radio" name="check1-1" value="no"> ❌ No</label>
+      </div>
+      <span class="item-feedback" id="fb-check1-1"></span>
+    </div>
+
+    <div class="online-q" data-q="2" data-answer="no">
+      <div class="sentence">2. We <b>are watching</b> a film right now.</div>
+      <div class="radio-row">
+        <label><input type="radio" name="check1-2" value="yes"> ✅ Yes</label>
+        <label><input type="radio" name="check1-2" value="no"> ❌ No</label>
+      </div>
+      <span class="item-feedback" id="fb-check1-2"></span>
+    </div>
+
+    <div class="online-q" data-q="3" data-answer="yes">
+      <div class="sentence">3. The sun <b>rises</b> in the east.</div>
+      <div class="radio-row">
+        <label><input type="radio" name="check1-3" value="yes"> ✅ Yes</label>
+        <label><input type="radio" name="check1-3" value="no"> ❌ No</label>
+      </div>
+      <span class="item-feedback" id="fb-check1-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkCheckpoint()">✅ Check my answers</button>
+    <div class="feedback" id="checkpoint-feedback"></div>
+  </section>
+
+  <!-- ================= LEVEL 2 ================= -->
+  <section class="card l2" id="positive">
+    <span class="level-tag">Level 2</span>
+    <h2>➕ How to form a positive sentence</h2>
+
+    <div class="formula">
+      <b>I / You / We / They</b> <span class="plus">+</span> <b>verb</b> (no change)
+    </div>
+    <div class="formula">
+      <b>He / She / It</b> <span class="plus">+</span> <b>verb + s / es</b> 👈 <em>don't forget the -s!</em>
+    </div>
+
+    <table>
+      <tr><th>Subject</th><th>Verb</th><th>Example</th></tr>
+      <tr><td>I / You / We / They</td><td>play</td><td>They <b>play</b> football on Saturdays.</td></tr>
+      <tr><td>He / She / It</td><td>play<b>s</b></td><td>She <b>plays</b> the guitar.</td></tr>
+      <tr><td>He / She / It</td><td>watch<b>es</b></td><td>He <b>watches</b> TV after dinner.</td></tr>
+      <tr><td>He / She / It</td><td>stud<b>ies</b></td><td>My sister <b>studies</b> English.</td></tr>
+    </table>
+
+    <h3>🔐 Secret code: how to add -s / -es</h3>
+    <table>
+      <tr><th>Rule</th><th>Verb → he/she/it</th></tr>
+      <tr><td>Most verbs: <b>+ s</b></td><td>work → work<b>s</b> • live → live<b>s</b> • like → like<b>s</b></td></tr>
+      <tr><td>Ends in <b>-ch, -sh, -ss, -s, -x, -o</b>: <b>+ es</b></td>
+          <td>watch → watch<b>es</b> • finish → finish<b>es</b> • go → go<b>es</b> • do → do<b>es</b></td></tr>
+      <tr><td>Consonant + <b>y</b>: <b>y → ies</b></td>
+          <td>study → stud<b>ies</b> • carry → carr<b>ies</b></td></tr>
+      <tr><td>Vowel + <b>y</b>: just <b>+ s</b></td>
+          <td>play → play<b>s</b> • buy → buy<b>s</b></td></tr>
+      <tr><td>⭐ Irregular boss</td><td>have → <b>has</b></td></tr>
+    </table>
+
+    <div class="warn">
+      <b>⚠️ Careful!</b> The verb <b>be</b> is special and does NOT follow these rules:
+      <br>I <b>am</b> • you/we/they <b>are</b> • he/she/it <b>is</b>. It also doesn't use <em>do/does</em>.
+    </div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= ONLINE EXERCISE AFTER LEVEL 2 ================= -->
+  <section class="card exercise" id="ex2">
+    <span class="level-tag">Practice</span>
+    <h2>✏️ Build a positive sentence</h2>
+    <p>Type each full Present Simple positive sentence. Then press Check.</p>
+
+    <div class="online-q" data-answer="my cousin lives in canada">
+      <div class="sentence">1. My cousin / live / in Canada</div>
+      <input class="answer-input" id="ex2-1" aria-label="Answer 1" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex2-1"></span>
+    </div>
+
+    <div class="online-q" data-answer="the children eat lunch at 1230">
+      <div class="sentence">2. The children / eat / lunch at 12:30</div>
+      <input class="answer-input" id="ex2-2" aria-label="Answer 2" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex2-2"></span>
+    </div>
+
+    <div class="online-q" data-answer="he finishes his homework before dinner">
+      <div class="sentence">3. He / finish / his homework before dinner</div>
+      <input class="answer-input" id="ex2-3" aria-label="Answer 3" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex2-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkEx2()">✅ Check my sentences</button>
+    <div class="feedback" id="ex2-feedback"></div>
+  </section>
+
+  <!-- ================= LEVEL 3 ================= -->
+  <section class="card l3" id="negative">
+    <span class="level-tag">Level 3</span>
+    <h2>➖ How to form a negative sentence</h2>
+
+    <div class="formula">
+      <b>I / You / We / They</b> <span class="plus">+</span> <b>don't</b> (do not) <span class="plus">+</span> <b>verb</b>
+    </div>
+    <div class="formula">
+      <b>He / She / It</b> <span class="plus">+</span> <b>doesn't</b> (does not) <span class="plus">+</span> <b>verb</b>
+    </div>
+
+    <div class="bubbles">
+      <div class="bubble ok">I <b>don't like</b> coffee. ☕🚫</div>
+      <div class="bubble ok">They <b>don't live</b> in London.</div>
+      <div class="bubble ok">She <b>doesn't eat</b> meat. 🥗</div>
+      <div class="bubble ok">My brother <b>doesn't watch</b> TV.</div>
+    </div>
+
+    <div class="warn">
+      <b>⚠️ Trap alert!</b> When you use <b>doesn't</b>, the <b>-s goes away</b> (it "jumps" onto <em>does</em>).
+      <br>❌ She doesn't <s>plays</s> tennis. &nbsp;→&nbsp; ✅ She doesn't <b>play</b> tennis.
+      <br>❌ He don't <s>works</s> here. &nbsp;→&nbsp; ✅ He <b>doesn't work</b> here.
+    </div>
+
+    <div class="tip">
+      <b>💡 Short forms:</b> do not = <b>don't</b> &nbsp;•&nbsp; does not = <b>doesn't</b>
+    </div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= ONLINE EXERCISE AFTER LEVEL 3 ================= -->
+  <section class="card exercise" id="ex3">
+    <span class="level-tag">Practice</span>
+    <h2>✏️ Build a negative sentence</h2>
+    <p>Type each full Present Simple negative sentence. Then press Check.</p>
+
+    <div class="online-q" data-answer="she doesnt like spiders">
+      <div class="sentence">1. She / not / like / spiders</div>
+      <input class="answer-input" id="ex3-1" aria-label="Negative answer 1" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex3-1"></span>
+    </div>
+
+    <div class="online-q" data-answer="we dont have a garden">
+      <div class="sentence">2. We / not / have / a garden</div>
+      <input class="answer-input" id="ex3-2" aria-label="Negative answer 2" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex3-2"></span>
+    </div>
+
+    <div class="online-q" data-answer="tom doesnt go to the gym">
+      <div class="sentence">3. Tom / not / go / to the gym</div>
+      <input class="answer-input" id="ex3-3" aria-label="Negative answer 3" placeholder="Type the full sentence">
+      <span class="item-feedback" id="fb-ex3-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkTypedExercise('ex3','ex3-feedback')">✅ Check my sentences</button>
+    <div class="feedback" id="ex3-feedback"></div>
+  </section>
+
+  <!-- ================= LEVEL 4 ================= -->
+  <section class="card l4" id="yesno">
+    <span class="level-tag">Level 4</span>
+    <h2>❓ How to form a yes/no question</h2>
+
+    <div class="formula">
+      <b>Do</b> <span class="plus">+</span> <b>I / you / we / they</b> <span class="plus">+</span> <b>verb</b> + ?
+    </div>
+    <div class="formula">
+      <b>Does</b> <span class="plus">+</span> <b>he / she / it</b> <span class="plus">+</span> <b>verb</b> + ?
+    </div>
+
+    <div class="bubbles">
+      <div class="bubble">🎤 <b>Do</b> you <b>like</b> ice cream? — Yes, I <b>do</b>. / No, I <b>don't</b>.</div>
+      <div class="bubble">🎤 <b>Do</b> they <b>play</b> tennis? — Yes, they <b>do</b>. / No, they <b>don't</b>.</div>
+      <div class="bubble">🎤 <b>Does</b> she <b>speak</b> French? — Yes, she <b>does</b>. / No, she <b>doesn't</b>.</div>
+      <div class="bubble">🎤 <b>Does</b> it <b>rain</b> a lot here? — Yes, it <b>does</b>. / No, it <b>doesn't</b>.</div>
+    </div>
+
+    <h3>🎁 Short answers (never use the main verb here!)</h3>
+    <table>
+      <tr><th>Question</th><th>✅ Yes…</th><th>❌ No…</th></tr>
+      <tr><td>Do you…?</td><td>Yes, I <b>do</b>.</td><td>No, I <b>don't</b>.</td></tr>
+      <tr><td>Do they…?</td><td>Yes, they <b>do</b>.</td><td>No, they <b>don't</b>.</td></tr>
+      <tr><td>Does he…?</td><td>Yes, he <b>does</b>.</td><td>No, he <b>doesn't</b>.</td></tr>
+      <tr><td>Does she…?</td><td>Yes, she <b>does</b>.</td><td>No, she <b>doesn't</b>.</td></tr>
+    </table>
+
+    <div class="warn">
+      <b>⚠️ Trap alert!</b> No <b>-s</b> on the verb in questions — the <em>does</em> already has it.
+      <br>❌ <s>Does she likes</s> pizza? &nbsp;→&nbsp; ✅ <b>Does she like</b> pizza?
+    </div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= ONLINE EXERCISE AFTER LEVEL 4 ================= -->
+  <section class="card exercise" id="ex4">
+    <span class="level-tag">Practice</span>
+    <h2>✏️ Build a yes/no question</h2>
+    <p>Type each full Present Simple yes/no question. Then press Check.</p>
+
+    <div class="online-q" data-answer="do you like tea">
+      <div class="sentence">1. you / like / tea</div>
+      <input class="answer-input" id="ex4-1" aria-label="Yes/No question 1" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex4-1"></span>
+    </div>
+
+    <div class="online-q" data-answer="does he play the piano">
+      <div class="sentence">2. he / play / the piano</div>
+      <input class="answer-input" id="ex4-2" aria-label="Yes/No question 2" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex4-2"></span>
+    </div>
+
+    <div class="online-q" data-answer="do they live near here">
+      <div class="sentence">3. they / live / near here</div>
+      <input class="answer-input" id="ex4-3" aria-label="Yes/No question 3" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex4-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkTypedExercise('ex4','ex4-feedback')">✅ Check my questions</button>
+    <div class="feedback" id="ex4-feedback"></div>
+  </section>
+
+  <!-- ================= LEVEL 5 ================= -->
+  <section class="card l5" id="wh">
+    <span class="level-tag">Level 5</span>
+    <h2>🕵️ How to form a <em>wh-</em> question</h2>
+
+    <div class="formula">
+      <b>Wh- word</b> <span class="plus">+</span> <b>do / does</b> <span class="plus">+</span> <b>subject</b> <span class="plus">+</span> <b>verb</b> + ?
+    </div>
+
+    <h3>🎒 The wh- word backpack</h3>
+    <p>
+      <code>What</code> <code>Where</code> <code>When</code> <code>Why</code>
+      <code>Who</code> <code>Which</code> <code>Whose</code> <code>How</code>
+      <code>How often</code> <code>What time</code>
+    </p>
+
+    <table>
+      <tr><th>Wh- word</th><th>Question</th><th>Answer</th></tr>
+      <tr><td><b>What</b></td><td>What <b>do</b> you <b>eat</b> for breakfast?</td><td>I eat cereal.</td></tr>
+      <tr><td><b>Where</b></td><td>Where <b>does</b> he <b>live</b>?</td><td>He lives in Rome.</td></tr>
+      <tr><td><b>When</b></td><td>When <b>do</b> they <b>start</b> school?</td><td>They start in September.</td></tr>
+      <tr><td><b>Why</b></td><td>Why <b>does</b> she <b>cry</b>?</td><td>She cries because she is sad.</td></tr>
+      <tr><td><b>Which</b></td><td>Which bus <b>do</b> you <b>take</b>?</td><td>I take bus 14.</td></tr>
+      <tr><td><b>How often</b></td><td>How often <b>do</b> you <b>swim</b>?</td><td>Twice a week.</td></tr>
+      <tr><td><b>What time</b></td><td>What time <b>does</b> the film <b>start</b>?</td><td>At 8 o'clock.</td></tr>
+    </table>
+
+    <div class="warn">
+      <b>⚠️ Same rules as yes/no questions:</b> use <b>do</b> with I/you/we/they and
+      <b>does</b> with he/she/it — and the main verb stays in the base form.
+    </div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= ONLINE EXERCISE AFTER LEVEL 5 ================= -->
+  <section class="card exercise" id="ex5">
+    <span class="level-tag">Practice</span>
+    <h2>✏️ Build a wh- question</h2>
+    <p>Type each full Present Simple wh- question. Then press Check.</p>
+
+    <div class="online-q" data-answer="where do you work">
+      <div class="sentence">1. Where / you / work</div>
+      <input class="answer-input" id="ex5-1" aria-label="Wh- question 1" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex5-1"></span>
+    </div>
+
+    <div class="online-q" data-answer="what time does he get up">
+      <div class="sentence">2. What time / he / get up</div>
+      <input class="answer-input" id="ex5-2" aria-label="Wh- question 2" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex5-2"></span>
+    </div>
+
+    <div class="online-q" data-answer="why do they study english">
+      <div class="sentence">3. Why / they / study / English</div>
+      <input class="answer-input" id="ex5-3" aria-label="Wh- question 3" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex5-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkTypedExercise('ex5','ex5-feedback')">✅ Check my questions</button>
+    <div class="feedback" id="ex5-feedback"></div>
+  </section>
+
+  <!-- ================= LEVEL 6 ================= -->
+  <section class="card l6" id="who">
+    <span class="level-tag">Level 6</span>
+    <h2>🦸 How to form a "who" question</h2>
+    <p>When "who" is the person who <b>does</b> the action, use this pattern.</p>
+
+    <h3>"Who" = the SUBJECT (the doer) 🦸‍♂️</h3>
+    <div class="formula">
+      <b>Who</b> <span class="plus">+</span> <b>verb (+ s / es)</b> <span class="plus">+</span> … ?
+      &nbsp;&nbsp;<em>NO do / does!</em>
+    </div>
+    <div class="bubbles">
+      <div class="bubble ok">Who <b>plays</b> the piano? — Maria <b>does</b>. / Maria.</div>
+      <div class="bubble ok">Who <b>wants</b> ice cream? — I <b>do</b>!</div>
+      <div class="bubble ok">Who <b>lives</b> in this house? — My grandparents <b>do</b>.</div>
+    </div>
+    <div class="tip">
+      <b>💡 Why no "does"?</b> Because <em>who</em> IS the subject — there is nobody else for <em>does</em> to help.
+      The verb behaves like he/she/it, so it takes <b>-s</b>.
+    </div>
+
+    <div class="warn">
+      <b>⚠️ Trap alert!</b> Don't add <b>do / does</b> when “who” is the subject.
+      <br>❌ <s>Who does play the piano?</s> &nbsp;→&nbsp; ✅ <b>Who plays the piano?</b>
+      <br>❌ <s>Who does live here?</s> &nbsp;→&nbsp; ✅ <b>Who lives here?</b>
+    </div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= ONLINE EXERCISE AFTER LEVEL 6 ================= -->
+  <section class="card exercise" id="ex6">
+    <span class="level-tag">Practice</span>
+    <h2>✏️ Build a "who" subject question</h2>
+    <p>Type each full Present Simple “who” question. Remember: no <b>do/does</b>! Then press Check.</p>
+
+    <div class="online-q" data-answer="who makes dinner">
+      <div class="sentence">1. Who / make / dinner</div>
+      <input class="answer-input" id="ex6-1" aria-label="Who question 1" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex6-1"></span>
+    </div>
+
+    <div class="online-q" data-answer="who teaches your class">
+      <div class="sentence">2. Who / teach / your class</div>
+      <input class="answer-input" id="ex6-2" aria-label="Who question 2" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex6-2"></span>
+    </div>
+
+    <div class="online-q" data-answer="who helps you">
+      <div class="sentence">3. Who / help / you</div>
+      <input class="answer-input" id="ex6-3" aria-label="Who question 3" placeholder="Type the full question">
+      <span class="item-feedback" id="fb-ex6-3"></span>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkTypedExercise('ex6','ex6-feedback')">✅ Check my questions</button>
+    <div class="feedback" id="ex6-feedback"></div>
+  </section>
+
+  <!-- ================= BOSS BATTLE ================= -->
+  <section class="card boss" id="boss">
+    <span class="level-tag">Boss Battle</span>
+    <h2>👑 Final Challenge — 8 questions</h2>
+    <p>Type the missing words in the boxes, then press Check.</p>
+
+    <div class="online-q">
+      <div class="sentence">1. My dad <input class="blank-input" data-answer="drinks" aria-label="Blank 1"> (drink) coffee every morning.</div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">2. We <input class="blank-input" data-answer="don't watch|do not watch" aria-label="Blank 2"> (not / watch) TV in the morning.</div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">3. <input class="blank-input" data-answer="does" aria-label="Blank 3"> your sister <input class="blank-input" data-answer="like" aria-label="Blank 4"> (like) pizza?</div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">4. Where <input class="blank-input" data-answer="do" aria-label="Blank 5"> you <input class="blank-input" data-answer="live" aria-label="Blank 6"> (live)?</div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">5. <input class="blank-input" data-answer="does" aria-label="Blank 7"> Anna <input class="blank-input" data-answer="work" aria-label="Blank 8"> (work) on Saturdays?</div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">6. Who <input class="blank-input" data-answer="plays" aria-label="Blank 9"> (play) football in your family? <em>(subject question)</em></div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">7. Who <input class="blank-input" data-answer="cooks" aria-label="Blank 10"> (cook) dinner in your home? <em>(subject question)</em></div>
+    </div>
+
+    <div class="online-q">
+      <div class="sentence">8. <input class="blank-input" data-answer="does" aria-label="Blank 11"> he <input class="blank-input" data-answer="have" aria-label="Blank 12"> (have) a car?</div>
+    </div>
+
+    <button class="check-btn" type="button" onclick="checkBoss()">✅ Check my answers</button>
+    <div class="feedback" id="boss-feedback"></div>
+
+    <label class="master"><input type="checkbox"><span class="box"></span></label>
+  </section>
+
+  <!-- ================= VICTORY PAGE ================= -->
+  <section class="card victory" id="victory">
+    <div class="crown">👑</div>
+    <h2>VICTORY!</h2>
+    <p>You completed all 6 levels and defeated the Boss Battle.</p>
+    <p>🏆 The Present Simple crown is yours! 🏆</p>
+    <p>Great job, grammar hero. Keep using your new powers every day!</p>
+  </section>
+
+  <footer>
+    🏆 Present Simple Quest • Working list for A1–A2 • Click me, tick me, master me!
+  </footer>
+
+</div>
+
+<script>
+  function normalize(value){
+    return value
+      .toLowerCase()
+      .replace(/[.,!?;:'’"]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function checkTypedExercise(containerId, feedbackId){
+    const container = document.getElementById(containerId);
+    const items = container.querySelectorAll('.online-q');
+    let allCorrect = true;
+    let allAnswered = true;
+
+    items.forEach((item) => {
+      const input = item.querySelector('.answer-input');
+      const feedback = item.querySelector('.item-feedback');
+      feedback.className = 'item-feedback';
+
+      if (input.value.trim() === '') {
+        allAnswered = false;
+        allCorrect = false;
+        feedback.textContent = 'Type your answer first.';
+        feedback.classList.add('bad');
+        return;
+      }
+
+      const expected = normalize(item.dataset.answer);
+      if (normalize(input.value) === expected) {
+        feedback.textContent = '✅ Correct!';
+        feedback.classList.add('good');
+      } else {
+        allCorrect = false;
+        feedback.textContent = '❌ Not yet. Check the word order and verb form.';
+        feedback.classList.add('bad');
+      }
+    });
+
+    const overall = document.getElementById(feedbackId);
+    overall.className = 'feedback';
+
+    if (!allAnswered) {
+      overall.textContent = '⚠️ Finish all items first.';
+      overall.classList.add('bad');
+    } else if (allCorrect) {
+      overall.textContent = '🎉 Great job! All answers are correct!';
+      overall.classList.add('good');
+    } else {
+      overall.textContent = '🔁 Almost! Check the red items and try again.';
+      overall.classList.add('bad');
+    }
+  }
+
+  function checkCheckpoint(){
+    const container = document.getElementById('check1');
+    const questions = container.querySelectorAll('.online-q');
+    let allCorrect = true;
+    let allAnswered = true;
+
+    questions.forEach((q) => {
+      const selected = q.querySelector('input[type="radio"]:checked');
+      const feedback = q.querySelector('.item-feedback');
+      feedback.className = 'item-feedback';
+
+      if (!selected) {
+        allAnswered = false;
+        allCorrect = false;
+        feedback.textContent = 'Choose Yes or No.';
+        feedback.classList.add('bad');
+        return;
+      }
+
+      if (selected.value === q.dataset.answer) {
+        feedback.textContent = '✅ Correct!';
+        feedback.classList.add('good');
+      } else {
+        allCorrect = false;
+        feedback.textContent = '❌ Try again.';
+        feedback.classList.add('bad');
+      }
+    });
+
+    const overall = document.getElementById('checkpoint-feedback');
+    overall.className = 'feedback';
+
+    if (!allAnswered) {
+      overall.textContent = '⚠️ Answer all three questions first.';
+      overall.classList.add('bad');
+    } else if (allCorrect) {
+      overall.textContent = '🎉 Perfect! You can spot the Present Simple!';
+      overall.classList.add('good');
+    } else {
+      overall.textContent = '🔁 Not quite. Check the verbs and time words, then try again.';
+      overall.classList.add('bad');
+    }
+  }
+
+  function checkEx2(){
+    const container = document.getElementById('ex2');
+    const items = container.querySelectorAll('.online-q');
+    let allCorrect = true;
+    let allAnswered = true;
+
+    items.forEach((item) => {
+      const input = item.querySelector('.answer-input');
+      const feedback = item.querySelector('.item-feedback');
+      feedback.className = 'item-feedback';
+
+      if (input.value.trim() === '') {
+        allAnswered = false;
+        allCorrect = false;
+        feedback.textContent = 'Type your sentence first.';
+        feedback.classList.add('bad');
+        return;
+      }
+
+      const expected = normalize(item.dataset.answer);
+      if (normalize(input.value) === expected) {
+        feedback.textContent = '✅ Correct!';
+        feedback.classList.add('good');
+      } else {
+        allCorrect = false;
+        feedback.textContent = '❌ Not yet. Check the subject and the verb form.';
+        feedback.classList.add('bad');
+      }
+    });
+
+    const overall = document.getElementById('ex2-feedback');
+    overall.className = 'feedback';
+
+    if (!allAnswered) {
+      overall.textContent = '⚠️ Finish all three sentences first.';
+      overall.classList.add('bad');
+    } else if (allCorrect) {
+      overall.textContent = '🎉 Great job! Your positive sentences are perfect!';
+      overall.classList.add('good');
+    } else {
+      overall.textContent = '🔁 Almost! Remember: he/she/it needs -s or -es.';
+      overall.classList.add('bad');
+    }
+  }
+
+  function checkBoss(){
+    const container = document.getElementById('boss');
+    const blanks = container.querySelectorAll('.blank-input');
+    let correctCount = 0;
+
+    blanks.forEach((blank) => {
+      const expectedList = blank.dataset.answer.split('|').map(s => normalize(s.trim()));
+      const normalized = normalize(blank.value);
+      const isCorrect = normalized !== '' && expectedList.includes(normalized);
+
+      blank.classList.remove('correct', 'incorrect');
+
+      if (isCorrect) {
+        blank.classList.add('correct');
+        correctCount++;
+      } else {
+        blank.classList.add('incorrect');
+      }
+    });
+
+    const overall = document.getElementById('boss-feedback');
+    overall.className = 'feedback';
+
+    if (correctCount === blanks.length) {
+      overall.textContent = '👑 PERFECT! You defeated the Boss Battle!';
+      overall.classList.add('good');
+    } else {
+      overall.textContent = `⚔️ ${correctCount} / ${blanks.length} blanks correct. Fix the red boxes and try again!`;
+      overall.classList.add('bad');
+    }
+  }
+</script>
+
+</body>
+</html>
